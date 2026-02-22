@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux lxappearance thunar grim slurp clipman lxpolkit sway swaybg swayidle foot fuzzel dunst wlsunset 
+dnf5 install -y tmux brightnessctl lxappearance thunar grim slurp clipman lxpolkit sway swaybg swayidle foot fuzzel dunst wlsunset 
 
 # Use a COPR Example:
 #
@@ -18,7 +18,14 @@ dnf5 install -y tmux lxappearance thunar grim slurp clipman lxpolkit sway swaybg
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
+# Enable the community repository
+dnf5 -y copr enable atim/i3status-rust
 
+# Install the package
+dnf5 -y install i3status-rust
 #### Example for enabling a System Unit File
+
+dnf5 -y copr disable atim/i3status-rust
+
 
 systemctl enable podman.socket
