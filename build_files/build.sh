@@ -32,5 +32,6 @@ dnf5 -y copr enable solopasha/hyprland
 
 dnt5 -y install hyprland hyprlock hyprpaper hyprpicker hyprshot hypridle hyprland-contrib hyprland-plugins  hyprpolkitagent hyprpanel
 
+dnf5 -y disable solopasha/hyprland
 
 systemctl enable podman.socket
